@@ -1,0 +1,150 @@
+print("." * 73)
+
+# Parte 1: Operações matemáticas básicas
+num1 = int(input("- Diga o primeiro número: "))
+num2 = int(input("- Diga o segundo número: "))
+
+soma = num1 + num2
+sub = num1 - num2
+multi = num1 * num2
+div = num1 / num2 if num2 != 0 else "Erro: divisão por zero"
+
+print("Soma:          ", soma)
+print("Subtração:     ", sub)
+print("Multiplicação: ", multi)
+print("Divisão:       ", div)
+
+print("." * 73)
+
+# Parte 2: Contador de pares e ímpares
+condicao = 0
+totalpares = 0
+totalimpares = 0
+
+while condicao == 0:
+    numero = int(input("Digite um número: "))
+    print("Você digitou:", numero)
+
+    if numero % 2 == 0:
+        print("- Par -")
+        totalpares += 1
+    else:
+        print("- Ímpar -")
+        totalimpares += 1
+
+    condicao = int(input("Deseja continuar? Digite 0 para Sim ou 1 para Não: "))
+
+print("Foram digitados:")
+print("Pares   =", totalpares)
+print("Ímpares =", totalimpares)
+
+print("." * 73)
+
+# Parte 3: Menu de produtos
+valortotal = 0.0
+condicao = 1
+
+while condicao == 1:
+    print("1 - Salgado       R$10,00")
+    print("2 - Batata Frita  R$20,00")
+    print("3 - Hamburguer    R$30,00")
+    print("4 - Almoço        R$40,00")
+
+    opcao = int(input("Digite uma das opções acima: "))
+
+    if opcao == 1:
+        valortotal += 10.0
+    elif opcao == 2:
+        valortotal += 20.0
+    elif opcao == 3:
+        valortotal += 30.0
+    elif opcao == 4:
+        valortotal += 40.0
+    else:
+        print("Opção inválida")
+
+    condicao = int(input("Deseja mais algum item? Digite 1 para Sim ou qualquer outro número para Não: "))
+
+print(f"O total foi de R${valortotal:.2f}")
+
+print("." * 73)
+
+# Parte 4: Tipo de triângulo
+print("Digite os lados do triângulo:")
+a = int(input("Lado a: "))
+b = int(input("Lado b: "))
+c = int(input("Lado c: "))
+
+if a == b == c:
+    print("Equilátero")
+elif a != b and a != c and b != c:
+    print("Escaleno")
+else:
+    print("Isósceles")
+
+print("." * 73)
+
+# Parte 5: Avaliação de candidato
+print("Escolha uma das opções para titulação:")
+print("1 - 2° Grau")
+print("2 - Graduação")
+print("3 - Pós-Graduação")
+titulacao = int(input())
+
+tempo_experiencia = int(input("Informe seu tempo de experiência (em anos): "))
+idade = int(input("Informe sua idade: "))
+
+pontuacao = 0
+
+if idade < 40:
+    pontuacao += 100
+else:
+    pontuacao -= 50
+
+if titulacao == 1:
+    pontuacao += 50
+elif titulacao == 2:
+    pontuacao += 70 if tempo_experiencia < 4 else 90
+elif titulacao == 3:
+    if tempo_experiencia < 4:
+        pontuacao += 100
+    elif tempo_experiencia < 6:
+        pontuacao += 120
+    else:
+        pontuacao += 150
+else:
+    print("Titulação inválida!")
+
+print("PONTUAÇÃO FINAL =", pontuacao)
+
+print("." * 73)
+
+# Parte 6: Inversão de letras
+TAM = 4
+l = []
+
+for i in range(TAM):
+    letra = input(f"Informe a {i+1}ª letra: ")
+    l.append(letra)
+
+print("Letras invertidas:", ' '.join(reversed(l)))
+
+print("." * 73)
+
+# Parte 7: Matriz 3x3 e endereços (representação simulada)
+matriz = [[0.0 for _ in range(3)] for _ in range(3)]
+valor = 1.0
+
+for i in range(3):
+    for j in range(3):
+        matriz[i][j] = valor
+        valor += 1.0
+
+print("Endereços simulados de cada posição na matriz 3x3:")
+for i in range(3):
+    for j in range(3):
+        print(f"Matriz[{i}][{j}] = {matriz[i][j]} - id:{id(matriz[i][j])}")
+
+print("." * 73)
+
+#compilador: https://www.onlinegdb.com
